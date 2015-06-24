@@ -5,7 +5,7 @@ downloads.
 
 Due to difficulties downloading the files from [Instant Client Downloads page][]
 the process can not be automated. However, if the files are downloaded manually
-and put in the cache Homebrew can do the rest.
+and put in the cache then Homebrew can do the rest.
 
 
 ## Usage
@@ -32,7 +32,7 @@ the `DYLD_LIBRARY_PATH` environment variable. E.g. in order to install
 $ DYLD_LIBRARY_PATH=$(brew --prefix)/lib gem install ruby-oci8
 ```
 
-You can also set `DYLD_LIBRARY_PATH` but this is
+You can also set `DYLD_LIBRARY_PATH` globally but this is
 [discouraged](https://discussions.apple.com/thread/1108472) and is known to
 break things.
 
