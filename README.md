@@ -10,13 +10,17 @@ and put in the cache Homebrew can do the rest.
 
 ## Installing libraries which depend on Instant Client Basic Lite
 
-When installing libraries depending on SDK you might need to specify the
-`DYLD_LIBRARY_PATH` environment variable. E.g. in order to install [ruby-oci8][]
-you will need to execute
+When installing libraries which depend on Basic Lite you might need to specify
+the `DYLD_LIBRARY_PATH` environment variable. E.g. in order to install
+[ruby-oci8][] you will need to execute
 
 ```bash
 $ DYLD_LIBRARY_PATH=$(brew --prefix)/lib gem install ruby-oci8
 ```
+
+You can also set `DYLD_LIBRARY_PATH` but this is
+[discouraged](https://discussions.apple.com/thread/1108472) and is known to
+break things.
 
 
 # License
