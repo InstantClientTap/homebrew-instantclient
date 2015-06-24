@@ -8,6 +8,20 @@ the process can not be automated. However, if the files are downloaded manually
 and put in the cache Homebrew can do the rest.
 
 
+## Usage
+
+```bash
+$ brew install InstantClientTap/instantclient/<formula>
+```
+
+Or
+
+```bash
+$ brew tap InstantClientTap/instantclient
+$ brew install <formula>
+```
+
+
 ## Installing libraries which depend on Instant Client Basic Lite
 
 When installing libraries which depend on Basic Lite you might need to specify
