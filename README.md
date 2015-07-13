@@ -26,7 +26,7 @@ $ brew install <formula>
 
 When installing libraries which depend on Basic Lite you might need to specify
 the `DYLD_LIBRARY_PATH` environment variable. E.g. in order to install
-[ruby-oci8][] you will need to execute
+[ruby-oci8][] [older than 2.2.0][] you will need to execute
 
 ```bash
 $ DYLD_LIBRARY_PATH=$(brew --prefix)/lib gem install ruby-oci8
@@ -46,5 +46,6 @@ Homebrew Instant Client is licensed under the [MIT License][] (see [LICENSE][]).
 [Oracle Instant Client]: http://www.oracle.com/technetwork/database/features/instant-client/index-100365.html
 [Instant Client Downloads page]: http://www.oracle.com/technetwork/topics/intel-macsoft-096467.html
 [ruby-oci8]: https://github.com/kubo/ruby-oci8
+[older than 2.2.0]: https://github.com/kubo/ruby-oci8/blob/master/docs/install-instant-client.md#os-x
 [MIT License]: http://www.opensource.org/licenses/MIT
 [LICENSE]: https://github.com/InstantClientTap/homebrew-instantclient
