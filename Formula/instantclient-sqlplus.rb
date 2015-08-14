@@ -1,4 +1,5 @@
 require File.expand_path("../../Strategies/cache_wo_download", __FILE__)
+require File.expand_path("../../instantclient-util", __FILE__)
 
 # A formula that installs the Instant Client SQLPlus package.
 class InstantclientSqlplus < Formula
@@ -11,7 +12,13 @@ class InstantclientSqlplus < Formula
 
   depends_on "instantclient-basiclite"
 
+  include InstantclientUtil
+
   def install
+    Dir["*.dylib"].each do |file|
+      fix_oracle_lib_path(file)
+    end
+    fix_oracle_lib_path("sqlplus")
     lib.install Dir["*.dylib"]
     bin.install ["sqlplus"]
   end
