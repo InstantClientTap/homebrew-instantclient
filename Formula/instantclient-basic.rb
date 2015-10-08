@@ -1,4 +1,5 @@
 require File.expand_path("../../Strategies/cache_wo_download", __FILE__)
+require File.expand_path("../../instantclient-util", __FILE__)
 
 # A formula that installs the Instant Client Basic package.
 class InstantclientBasic < Formula
@@ -12,9 +13,12 @@ class InstantclientBasic < Formula
   # Use files provided by basiclite except NLS data.
   depends_on "instantclient-basiclite"
 
+  include InstantclientUtil
+
   def install
     # NLS data only.
     # All other files are same with basiclite.
+    fix_oracle_lib_path("libociei.dylib")
     lib.install ["libociei.dylib"]
   end
 end
