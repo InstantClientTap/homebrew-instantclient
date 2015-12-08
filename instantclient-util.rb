@@ -18,6 +18,10 @@ module InstantclientUtil
         system MacOS.locate("install_name_tool"), "-add_rpath",
                  HOMEBREW_PREFIX/"lib", file
       end
+      if file.dylib_id
+        system MacOS.locate("install_name_tool"), "-id",
+               HOMEBREW_PREFIX/"lib"/File.basename(file.dylib_id), file
+      end
       file.dynamically_linked_libraries.each do |fname|
         next if fname[0] == "@"
         if ORACLE_LIBRARIES.include? File.basename(fname)

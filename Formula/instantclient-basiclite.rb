@@ -13,12 +13,15 @@ class InstantclientBasiclite < Formula
   include InstantclientUtil
 
   def install
-    Dir["*.dylib*"].each do |file|
-      fix_oracle_lib_path(file)
-    end
     %w[libclntsh.dylib libocci.dylib].each do |dylib|
       ln_s "#{dylib}.11.1", dylib
     end
     lib.install Dir["*.dylib*"]
+  end
+
+  def post_install
+    Dir[lib/"*.dylib*"].each do |file|
+      fix_oracle_lib_path(file)
+    end
   end
 end
