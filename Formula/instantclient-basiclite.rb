@@ -10,6 +10,8 @@ class InstantclientBasiclite < Formula
       :using => CacheWoDownloadStrategy
   sha256 "d51c5fb67d1213c9b3c6301c6f73fe1bef45f78197e1bae7804df4c0abb468a7"
 
+  conflicts_with "instantclient-basic"
+
   include InstantclientUtil
 
   def install

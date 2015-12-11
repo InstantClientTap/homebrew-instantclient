@@ -10,7 +10,10 @@ class InstantclientSqlplus < Formula
       :using => CacheWoDownloadStrategy
   sha256 "127d2baaa4c72d8591af829f00dea5e2a77c0e272ce8fc091dd853e9406845b9"
 
-  depends_on "instantclient-basiclite"
+  option "with-basiclite", "Depend on instantclient-basiclite"
+
+  depends_on "instantclient-basic" unless build.with?("basiclite")
+  depends_on "instantclient-basiclite" if build.with?("basiclite")
 
   include InstantclientUtil
 
