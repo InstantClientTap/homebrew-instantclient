@@ -1,29 +1,20 @@
 require File.expand_path("../../Strategies/cache_wo_download", __FILE__)
-require File.expand_path("../../instantclient-util", __FILE__)
 
 # A formula that installs the Instant Client Basic Lite package.
 class InstantclientBasiclite < Formula
   desc "Oracle Instant Client Basic Lite x64."
   homepage "http://www.oracle.com/technetwork/topics/intel-macsoft-096467.html"
 
-  url "http://download.oracle.com/otn/mac/instantclient/11204/instantclient-basiclite-macos.x64-11.2.0.4.0.zip",
+  url "http://download.oracle.com/otn/mac/instantclient/121020/instantclient-basiclite-macos.x64-12.1.0.2.0.zip",
       :using => CacheWoDownloadStrategy
-  sha256 "d51c5fb67d1213c9b3c6301c6f73fe1bef45f78197e1bae7804df4c0abb468a7"
+  sha256 "80f1d2a0300bd485cb733f4c458f9e02344df62ed3c89d54354f9853b33e874c"
 
   conflicts_with "instantclient-basic"
 
-  include InstantclientUtil
-
   def install
     %w[libclntsh.dylib libocci.dylib].each do |dylib|
-      ln_s "#{dylib}.11.1", dylib
+      ln_s "#{dylib}.12.1", dylib
     end
     lib.install Dir["*.dylib*"]
-  end
-
-  def post_install
-    Dir[lib/"*.dylib*"].each do |file|
-      fix_oracle_lib_path(file)
-    end
   end
 end
