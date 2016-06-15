@@ -7,7 +7,7 @@ class InstantclientBasic < Formula
 
   url "http://download.oracle.com/otn/mac/instantclient/121020/instantclient-basic-macos.x64-12.1.0.2.0.zip",
       :using => CacheWoDownloadStrategy
-  sha256 "8c72abe1ee29c6f85c82851cfe5cdfc31bff09e162438aa755fc76f7a78bd1b6"
+  sha256 "ecbf84ff011fcd8981c2cd9355f958ee42b2e452ebaad2d42df7b226903679cf"
 
   conflicts_with "instantclient-basiclite"
 
