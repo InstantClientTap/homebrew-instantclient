@@ -5,8 +5,9 @@ downloads.
 
 Due to difficulties downloading the files from [Instant Client Downloads page][]
 the process can not be automated. However, if the files are downloaded manually
-and put in the cache then Homebrew can do the rest.
-
+and put in the cache then Homebrew can do the rest. You will need at least the
+`instantclient-basic` file downloaded to `$HOME/Library/Caches/Homebrew` and
+then any additional files such as `sqlplus` related ones.
 
 ## Usage
 
@@ -14,13 +15,20 @@ and put in the cache then Homebrew can do the rest.
 $ brew install InstantClientTap/instantclient/<formula>
 ```
 
-Or
+Where `<formula>` is one of the formulas listed in the `Formula/` directory. For
+example `instantclient-sqlplus` would require
+
+```bash
+$ brew install InstantClientTap/instantclient/instantclient-sqlplus
+```
+
+You could also tap the repository before installing. This is equivalent to the
+calls above:
 
 ```bash
 $ brew tap InstantClientTap/instantclient
 $ brew install <formula>
 ```
-
 
 ## Installing libraries which depend on Instant Client Basic Lite
 
