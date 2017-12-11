@@ -15,7 +15,7 @@ class InstantclientSqlplus11 < Formula
 
   conflicts_with "instantclient-sqlplus", because: "Differing versions of same formula"
 
-  depends_on "instantclient-basic11" unless build.with?("basiclite11")
+  depends_on "instantclient-basic11" if build.without?("basiclite11")
   depends_on "instantclient-basiclite11" if build.with?("basiclite11")
 
   def install

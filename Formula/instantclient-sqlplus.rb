@@ -11,7 +11,7 @@ class InstantclientSqlplus < Formula
 
   option "with-basiclite", "Depend on instantclient-basiclite instead of instantclient-basic."
 
-  depends_on "instantclient-basic" unless build.with?("basiclite")
+  depends_on "instantclient-basic" if build.without?("basiclite")
   depends_on "instantclient-basiclite" if build.with?("basiclite")
 
   def install
