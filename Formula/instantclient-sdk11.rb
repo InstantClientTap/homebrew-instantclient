@@ -14,8 +14,26 @@ class InstantclientSdk11 < Formula
   conflicts_with "instantclient-basic", because: "Differing versions of same formula"
 
   def install
-    # Ideally should go into includes but ruby-oci8 seems very picky...
-    # include.install Dir["sdk/include/*.h"]
     lib.install ["sdk"]
+    # Header files can not be moved out of sdk/include because some software
+    # (e.g. ruby-oci8) expects to find them there. Link the header files
+    # instead.
+    Dir[lib.join("sdk/include/*.h")].each do |header_file|
+      include.install_symlink header_file
+    end
+  end
+
+  test do
+    (testpath/"test.c").write <<~EOS
+      #include <oci.h>
+
+      int main()
+      {
+        ub4 od = OCI_DEFAULT;
+        return 0;
+      }
+    EOS
+    system ENV.cc, "test.c", "-I#{include}", "-o", "test"
+    system "./test"
   end
 end
