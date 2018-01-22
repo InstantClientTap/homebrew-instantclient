@@ -2,7 +2,7 @@ require File.expand_path("../../Strategies/cache_wo_download", __FILE__)
 
 # A formula that installs the Instant Client SDK package.
 class InstantclientSdk < Formula
-  desc "Oracle Instant Client SDK x64."
+  desc "Oracle Instant Client SDK x64"
   homepage "http://www.oracle.com/technetwork/topics/intel-macsoft-096467.html"
   hp = homepage
 
