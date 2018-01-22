@@ -5,9 +5,9 @@ class InstantclientSdk < Formula
   desc "Oracle Instant Client SDK x64."
   homepage "http://www.oracle.com/technetwork/topics/intel-macsoft-096467.html"
 
-  url "http://download.oracle.com/otn/mac/instantclient/122010/instantclient-sdk-macos.x64-12.2.0.1.0.zip",
+  url "http://download.oracle.com/otn/mac/instantclient/122010/instantclient-sdk-macos.x64-12.2.0.1.0-2.zip",
       :using => CacheWoDownloadStrategy
-  sha256 "fe149f4febcdcd6b836a3ee68df958ff324ebd70e99d3bffdfd0652fe15b19dd"
+  sha256 "e0befca9c4e71ebc9f444957ffa70f01aeeec5976ea27c40406471b04c34848b"
 
   def install
     # Ideally should go into includes but ruby-oci8 seems very picky...

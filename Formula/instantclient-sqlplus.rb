@@ -5,9 +5,9 @@ class InstantclientSqlplus < Formula
   desc "Oracle Instant Client SQLPlus x64."
   homepage "http://www.oracle.com/technetwork/topics/intel-macsoft-096467.html"
 
-  url "http://download.oracle.com/otn/mac/instantclient/122010/instantclient-sqlplus-macos.x64-12.2.0.1.0.zip",
+  url "http://download.oracle.com/otn/mac/instantclient/122010/instantclient-sqlplus-macos.x64-12.2.0.1.0-2.zip",
       :using => CacheWoDownloadStrategy
-  sha256 "df4ab35ed15c49f0c341a487afb50f38b65f80cde385d4007af5d922a9e0e5bf"
+  sha256 "d147cbb5b2a954fdcb4b642df4f0bd1153fd56e0f56e7fa301601b4f7e2abe0e"
 
   option "with-basiclite", "Depend on instantclient-basiclite instead of instantclient-basic."
 
