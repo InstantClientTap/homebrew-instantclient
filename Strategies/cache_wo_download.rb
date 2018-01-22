@@ -6,7 +6,7 @@ class CacheWoDownloadStrategy < CurlDownloadStrategy
 
   def fetch
     unless cached_location.exist?
-      odie <<-EOS.undent
+      odie <<~EOS
         The following file can not be downloaded automatically:
           #{@url}
 
