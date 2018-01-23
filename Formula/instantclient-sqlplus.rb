@@ -21,7 +21,7 @@ class InstantclientSqlplus < Formula
 
   def install
     if HOMEBREW_PREFIX.to_s != "/usr/local"
-      system MacOS.locate("install_name_tool"), "-add_rpath", HOMEBREW_PREFIX/"lib", "sqlplus"
+      system DevelopmentTools.locate("install_name_tool"), "-add_rpath", HOMEBREW_PREFIX/"lib", "sqlplus"
     end
     lib.install Dir["*.dylib"]
     bin.install ["sqlplus"]
