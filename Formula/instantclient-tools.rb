@@ -6,13 +6,13 @@ class InstantclientTools < Formula
   homepage "http://www.oracle.com/technetwork/topics/intel-macsoft-096467.html"
   hp = homepage
 
-  url "http://download.oracle.com/otn/mac/instantclient/122010/instantclient-basic-macos.x64-12.2.0.1.0-2.zip",
+  url "http://download.oracle.com/otn/mac/instantclient/122010/instantclient-tools-macos.x64-12.2.0.1.0-2.zip",
       :using => (Class.new(CacheWoDownloadStrategy) do
                    define_method :homepage do
                      hp
                    end
                  end)
-  sha256 "3ed3102e5a24f0da638694191edb34933309fb472eb1df21ad5c86eedac3ebb9"
+  sha256 "dfd2d9a2721d2e2a90d8053a8e4c9d0c9a68e8d47c9c99e1b80e8fa1c2edb99c"
 
   def install
     lib.install Dir["*.dylib*"]
