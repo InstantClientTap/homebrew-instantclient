@@ -15,6 +15,10 @@ class InstantclientTools < Formula
   sha256 "dfd2d9a2721d2e2a90d8053a8e4c9d0c9a68e8d47c9c99e1b80e8fa1c2edb99c"
 
   def install
-    lib.install Dir["*.dylib*"]
+    if HOMEBREW_PREFIX.to_s != "/usr/local"
+      system DevelopmentTools.locate("install_name_tool"), "-add_rpath", HOMEBREW_PREFIX/"lib", "tools"
+    end
+    lib.install Dir["*.dylib"]
+    bin.install %w[impdp expdp exp imp wrc sqlldr]
   end
 end
