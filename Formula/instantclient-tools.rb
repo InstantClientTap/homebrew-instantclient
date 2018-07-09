@@ -19,11 +19,6 @@ class InstantclientTools < Formula
       system DevelopmentTools.locate("install_name_tool"), "-add_rpath", HOMEBREW_PREFIX/"lib", "tools"
     end
     lib.install Dir["*.dylib"]
-    bin.install ["impdp"]
-    bin.install ["expdp"]
-    bin.install ["exp"]
-    bin.install ["imp"]
-    bin.install ["wrc"]
-    bin.install ["sqlldr"]
+    bin.install ["impdp", "expdp", "exp", "imp", "wrc", "sqlldr"]
   end
 end
