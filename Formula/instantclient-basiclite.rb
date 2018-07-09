@@ -1,4 +1,4 @@
-require File.expand_path("../../Strategies/cache_wo_download", __FILE__)
+require File.expand_path("../Strategies/cache_wo_download", __dir__)
 
 # A formula that installs the Instant Client Basic Lite package.
 class InstantclientBasiclite < Formula
