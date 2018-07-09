@@ -14,6 +14,11 @@ class InstantclientTools < Formula
                  end)
   sha256 "dfd2d9a2721d2e2a90d8053a8e4c9d0c9a68e8d47c9c99e1b80e8fa1c2edb99c"
 
+  option "with-basiclite", "Depend on instantclient-basiclite instead of instantclient-basic."
+
+  depends_on "instantclient-basic" if build.without?("basiclite")
+  depends_on "instantclient-basiclite" if build.with?("basiclite")
+
   def install
     if HOMEBREW_PREFIX.to_s != "/usr/local"
       system DevelopmentTools.locate("install_name_tool"), "-add_rpath", HOMEBREW_PREFIX/"lib", "tools"
