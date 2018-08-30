@@ -7,11 +7,6 @@
 # abstract class with the `homepage` method unimplemented. Formulas using this
 # strategy need to derive from this class and implement the `homepage` method.
 class CacheWoDownloadStrategy < CurlDownloadStrategy
-  def initialize(*args)
-    super
-    @tarball_path = HOMEBREW_CACHE.join(filename)
-  end
-
   def homepage
     raise ArgumentError,
           "You need to override the `homepage` method to return the homepage!"
@@ -29,13 +24,21 @@ class CacheWoDownloadStrategy < CurlDownloadStrategy
 
           #{@url}
 
-        To the homebrew cache directory:
+        To this location (a specific filename in homebrew cache directory):
 
-          #{HOMEBREW_CACHE}
+          #{cached_location}
 
-        Creating a symlink also works:
+        An example command to rename and move the file into the homebrew cache:
 
-          $ ln -sf /path/to/downloaded/#{filename} #{HOMEBREW_CACHE}/
+          $ cd /path/to/downloads && mv #{filename} #{cached_location}
+
+        Instead of renaming and moving you can create a symlink:
+
+          $ cd /path/to/downloads && ln -sf $(PWD)/#{filename} #{cached_location}
+
+        Then re-run the installation:
+
+          $ brew install #{name}
       EOS
     end
     super
