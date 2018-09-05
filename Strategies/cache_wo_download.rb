@@ -6,7 +6,7 @@
 # visible to the download strategy. Which is why this class is kind of an
 # abstract class with the `homepage` method unimplemented. Formulas using this
 # strategy need to derive from this class and implement the `homepage` method.
-class CacheWoDownloadStrategy < CurlDownloadStrategy
+class CacheWoDownloadStrategy < AbstractFileDownloadStrategy
   def homepage
     raise ArgumentError,
           "You need to override the `homepage` method to return the homepage!"
