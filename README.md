@@ -51,7 +51,7 @@ Homebrew Instant Client is licensed under the [MIT License][] (see [LICENSE][]).
 
 
 [homebrew]: http://brew.sh
-[Oracle Instant Client]: http://www.oracle.com/technetwork/database/features/instant-client/index-100365.html
+[Oracle Instant Client]: https://www.oracle.com/technetwork/database/database-technologies/instant-client/overview/index.html
 [Instant Client Downloads page]: http://www.oracle.com/technetwork/topics/intel-macsoft-096467.html
 [ruby-oci8]: https://github.com/kubo/ruby-oci8
 [older than 2.2.0]: https://github.com/kubo/ruby-oci8/blob/master/docs/install-instant-client.md#os-x
