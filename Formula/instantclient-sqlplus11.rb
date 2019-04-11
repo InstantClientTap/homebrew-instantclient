@@ -3,7 +3,7 @@ require File.expand_path("../Strategies/cache_wo_download", __dir__)
 # A formula that installs the Instant Client SQLPlus package.
 class InstantclientSqlplus11 < Formula
   desc "Oracle Instant Client SQLPlus x64"
-  homepage "http://www.oracle.com/technetwork/topics/intel-macsoft-096467.html"
+  homepage "https://www.oracle.com/technetwork/topics/intel-macsoft-096467.html"
   hp = homepage
 
   url "http://download.oracle.com/otn/mac/instantclient/11204/instantclient-sqlplus-macos.x64-11.2.0.4.0.zip",
