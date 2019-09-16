@@ -3,12 +3,6 @@
 A tap of Mac [Homebrew][] formulas for [Oracle Instant Client][] and related
 downloads.
 
-Due to difficulties downloading the files from [Instant Client Downloads page][]
-the process can not be automated. However, if the files are downloaded manually
-and put in the cache then Homebrew can do the rest. You will need at least the
-`instantclient-basic` file downloaded to `$HOME/Library/Caches/Homebrew` and
-then any additional files such as `sqlplus` related ones.
-
 ## Usage
 
 ```bash
