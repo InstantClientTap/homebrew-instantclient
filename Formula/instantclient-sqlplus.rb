@@ -17,5 +17,8 @@ class InstantclientSqlplus < Formula
     end
     lib.install Dir["*.dylib"]
     bin.install ["sqlplus"]
+    if MacOS.version == :catalina
+      bin.env_script_all_files(libexec, "DYLD_LIBRARY_PATH" => HOMEBREW_PREFIX/"lib")
+    end
   end
 end
