@@ -12,10 +12,14 @@ class InstantclientTools < Formula
   depends_on "instantclient-basiclite" if build.with?("basiclite")
 
   def install
-    if HOMEBREW_PREFIX.to_s != "/usr/local"
-      system DevelopmentTools.locate("install_name_tool"), "-add_rpath", HOMEBREW_PREFIX/"lib", "tools"
-    end
     lib.install Dir["*.dylib"]
-    bin.install %w[impdp expdp exp imp wrc sqlldr]
+
+    bins = %w[impdp expdp exp imp wrc sqlldr]
+    if HOMEBREW_PREFIX.to_s != "/usr/local"
+      bins.each do |bin_f|
+        system DevelopmentTools.locate("install_name_tool"), "-add_rpath", HOMEBREW_PREFIX/"lib", bin_f
+      end
+    end
+    bin.install bins
   end
 end
