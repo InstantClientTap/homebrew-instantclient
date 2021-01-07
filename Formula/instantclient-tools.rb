@@ -3,8 +3,8 @@ class InstantclientTools < Formula
   desc "Oracle Instant Client Tools x64"
   homepage "https://www.oracle.com/database/technologies/instant-client/macos-intel-x86-downloads.html"
 
-  url "https://download.oracle.com/otn_software/mac/instantclient/193000/instantclient-tools-macos.x64-19.3.0.0.0dbru.zip"
-  sha256 "b2bc474f98da13efdbc77fd05f559498cd8c08582c5b9038f6a862215de33f2c"
+  url "https://download.oracle.com/otn_software/mac/instantclient/198000/instantclient-tools-macos.x64-19.8.0.0.0dbru.zip"
+  sha256 "d711451996a916af6880643a78f4afe0fad7979a8e020459580a78989e6ec5d5"
 
   option "with-basiclite", "Depend on instantclient-basiclite instead of instantclient-basic."
 
