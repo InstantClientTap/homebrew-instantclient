@@ -1,5 +1,5 @@
 # A formula that installs the Instant Client ODBC package.
-class InstantclientBasic < Formula
+class InstantclientODBC < Formula
   desc "Oracle Instant Client ODBC x64"
   homepage "https://www.oracle.com/database/technologies/instant-client/macos-intel-x86-downloads.html"
   
