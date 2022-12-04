@@ -3,8 +3,8 @@ class InstantclientSqlplus < Formula
   desc "Oracle Instant Client SQLPlus x64"
   homepage "https://www.oracle.com/database/technologies/instant-client/macos-intel-x86-downloads.html"
 
-  url "https://download.oracle.com/otn_software/mac/instantclient/198000/instantclient-sqlplus-macos.x64-19.8.0.0.0dbru.zip"
-  sha256 "d3cba88b0a0a3d9993c4b64b611569d146cdf36ec55dd84eba4783517bd30959"
+  url "https://download.oracle.com/otn/mac/instantclient/181000/instantclient-sqlplus-macos.x64-18.1.0.0.0.zip"
+  sha256 "02e66dc52398fced75e7efcb6b4372afcf617f7d88344fb7f0f4bb2bed371f3b"
 
   option "with-basiclite", "Depend on instantclient-basiclite instead of instantclient-basic."
 
